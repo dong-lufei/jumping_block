@@ -1,0 +1,102 @@
+.container {
+  display: grid;
+  place-items: center;
+  margin-top: 5em;
+}
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 8em;
+  height: 1em;
+  font-size: 35px;
+}
+.wrap span {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.09em;
+  --duration: 1.5s;
+}
+.girl {
+  background-color: rgb(247, 126, 146);
+  animation: slide var(--duration) ease-in-out infinite alternate;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(8em - 1em));
+    filter: brightness(1.45);
+  }
+}
+
+.boys {
+  width: 6em;
+  display: flex;
+  justify-content: space-between;
+}
+.boys span {
+  background-color: rgb(104, 104, 245);
+  animation: var(--duration) ease-in-out infinite alternate;
+}
+.boys span:nth-child(1) {
+  animation-name: jump-off-1;
+}
+.boys span:nth-child(2) {
+  animation-name: jump-off-2;
+  filter: brightness(1.25);
+}
+.boys span:nth-child(3) {
+  animation-name: jump-off-3;
+  filter: brightness(1.35);
+}
+.boys span:nth-child(4) {
+  animation-name: jump-off-4;
+  filter: brightness(1.45);
+}
+
+@keyframes jump-off-1 {
+  0%,
+  15% {
+    transform: rotate(0deg);
+  }
+  35%,
+  100% {
+    transform-origin: -50% center;
+    transform: rotate(-180deg);
+  }
+}
+@keyframes jump-off-2 {
+  0%,
+  30% {
+    transform: rotate(0deg);
+  }
+  50%,
+  100% {
+    transform-origin: -50% center;
+    transform: rotate(-180deg);
+  }
+}
+@keyframes jump-off-3 {
+  0%,
+  45% {
+    transform: rotate(0deg);
+  }
+  65%,
+  100% {
+    transform-origin: -50% center;
+    transform: rotate(-180deg);
+  }
+}
+@keyframes jump-off-4 {
+  0%,
+  60% {
+    transform: rotate(0deg);
+  }
+  80%,
+  100% {
+    transform-origin: -50% center;
+    transform: rotate(-180deg);
+  }
+}
